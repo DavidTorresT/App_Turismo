@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Cursor;
 
 public class frmMedios extends JFrame {
 
@@ -25,7 +26,7 @@ public class frmMedios extends JFrame {
 	private JTextField txtNombre;
 	private JTextField txtObservacion;
 	private JTextField txtTipomedio;
-	private JButton btnNewButton;
+	private JButton btnGuardar;
 	Medios cr = new Medios();
 	private JLabel lblNewLabel_1;
 	private JTextField txtIdmedios;
@@ -94,9 +95,12 @@ public class frmMedios extends JFrame {
 		contentPane.add(txtTipomedio);
 		txtTipomedio.setColumns(10);
 		
-		btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
-		btnNewButton.addActionListener(new ActionListener() {
+		btnGuardar = new JButton("");
+		btnGuardar.setBorder(null);
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
+		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cr.create(txtNombre.getText(), txtObservacion.getText(), Integer.parseInt(txtTipomedio.getText()));
 				txtNombre.setText("");
@@ -104,9 +108,9 @@ public class frmMedios extends JFrame {
 				txtTipomedio.setText("");
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setBounds(188, 242, 46, 43);
-		contentPane.add(btnNewButton);
+		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnGuardar.setBounds(188, 242, 46, 43);
+		contentPane.add(btnGuardar);
 		
 		lblNewLabel_1 = new JLabel("ID Medio:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -119,6 +123,8 @@ public class frmMedios extends JFrame {
 		contentPane.add(txtIdmedios);
 		
 		btnDelete = new JButton("");
+		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnDelete.setBorder(null);
 		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

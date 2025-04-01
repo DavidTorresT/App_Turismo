@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Cursor;
 
 public class frmCompanias extends JFrame {
 
@@ -129,7 +130,10 @@ public class frmCompanias extends JFrame {
 		contentPane.add(lblNewLabel_3);
 		
 		btnGuardar = new JButton("");
+		btnGuardar.setBorder(null);
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cr.create(txtRazonsocial.getText(), txtDireccion.getText(), txtCorreo.getText(), txtTelefono.getText(), txtFechacreacion.getText(), txtWeb.getText());
@@ -156,6 +160,8 @@ public class frmCompanias extends JFrame {
 		contentPane.add(txtIdcompania);
 		
 		btnDelete = new JButton("");
+		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnDelete.setBorder(null);
 		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -164,6 +170,7 @@ public class frmCompanias extends JFrame {
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setBounds(265, 84, 48, 46);
+		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 	}
 }

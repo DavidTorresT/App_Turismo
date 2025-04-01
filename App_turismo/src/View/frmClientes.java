@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Cursor;
 
 public class frmClientes extends JFrame {
 
@@ -34,11 +35,11 @@ public class frmClientes extends JFrame {
 	private JTextField txtEstadocivil;
 	private JTextField txtTelefono;
 	private JTextField txtDireccion;
-	private JButton btnNewButton;
+	private JButton btnGuardar;
 	Clientes cr = new Clientes();
 	private JLabel lblIdCliente;
 	private JTextField txtIdcliente;
-	private JButton txtDelete;
+	private JButton btnDelete;
 
 	/**
 	 * Launch the application.
@@ -183,9 +184,12 @@ public class frmClientes extends JFrame {
 		lblNewLabel_3.setBounds(111, 22, 208, 36);
 		contentPane.add(lblNewLabel_3);
 		
-		btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
-		btnNewButton.addActionListener(new ActionListener() {
+		btnGuardar = new JButton("");
+		btnGuardar.setBorder(null);
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
+		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cr.create(Integer.parseInt(txtTipodocumento.getText()), Integer.parseInt(txtDocumento.getText()), txtNombres.getText(), txtApellidos.getText(), txtEps.getText(),
 						txtAlergias.getText(), txtFechanacimiento.getText(), txtCorreo.getText(), txtEstadocivil.getText(), txtTelefono.getText(), txtDireccion.getText());
@@ -202,9 +206,9 @@ public class frmClientes extends JFrame {
 				txtDireccion.setText("");
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setBounds(190, 326, 46, 39);
-		contentPane.add(btnNewButton);
+		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnGuardar.setBounds(190, 326, 46, 39);
+		contentPane.add(btnGuardar);
 		
 		lblIdCliente = new JLabel("ID Cliente:");
 		lblIdCliente.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -216,16 +220,19 @@ public class frmClientes extends JFrame {
 		txtIdcliente.setBounds(150, 82, 86, 20);
 		contentPane.add(txtIdcliente);
 		
-		txtDelete = new JButton("");
-		txtDelete.addMouseListener(new MouseAdapter() {
+		btnDelete = new JButton("");
+		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnDelete.setBorder(null);
+		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdcliente.getText()));
 			}
 		});
-		txtDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
-		txtDelete.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtDelete.setBounds(246, 69, 52, 51);
-		contentPane.add(txtDelete);
+		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
+		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnDelete.setContentAreaFilled(false);
+		btnDelete.setBounds(246, 69, 52, 51);
+		contentPane.add(btnDelete);
 	}
 }

@@ -17,6 +17,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Cursor;
 
 public class frmTiposmedios extends JFrame {
 
@@ -81,7 +82,10 @@ public class frmTiposmedios extends JFrame {
 		txtObservaciones.setColumns(10);
 		
 		JButton btnGuardar = new JButton("");
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGuardar.setBorder(null);
 		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cr.create(txtNombre.getText(), txtObservaciones.getText());
@@ -112,6 +116,8 @@ public class frmTiposmedios extends JFrame {
 		contentPane.add(txtIdtipomedio);
 		
 		JButton btnDelete = new JButton("");
+		btnDelete.setBorder(null);
+		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -120,6 +126,7 @@ public class frmTiposmedios extends JFrame {
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setBounds(240, 53, 48, 46);
+		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 	}
 }

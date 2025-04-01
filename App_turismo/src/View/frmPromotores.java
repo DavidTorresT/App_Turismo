@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Cursor;
 
 public class frmPromotores extends JFrame {
 
@@ -30,7 +31,7 @@ public class frmPromotores extends JFrame {
 	private JTextField txtCorreo;
 	private JTextField txtFechanacimiento;
 	private JTextField txtTelefono;
-	private JButton btnNewButton;
+	private JButton btnGuardar;
 	Promotores cr = new Promotores();
 	private JButton btnDelete;
 	private JLabel lblIdPromotor;
@@ -149,9 +150,12 @@ public class frmPromotores extends JFrame {
 		contentPane.add(txtTelefono);
 		txtTelefono.setColumns(10);
 		
-		btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
-		btnNewButton.addActionListener(new ActionListener() {
+		btnGuardar = new JButton("");
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGuardar.setBorder(null);
+		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
+		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cr.create(Integer.parseInt(txtTipodocumento.getText()), Integer.parseInt(txtNumerodocumento.getText()), txtNombres.getText(), txtApellidos.getText(), txtDireccion.getText(), txtCorreo.getText(), txtFechanacimiento.getText(), txtTelefono.getText());
 				txtTipodocumento.setText("");
@@ -165,11 +169,13 @@ public class frmPromotores extends JFrame {
 				
 			}
 		});
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setBounds(162, 309, 42, 46);
-		contentPane.add(btnNewButton);
+		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnGuardar.setBounds(162, 309, 42, 46);
+		contentPane.add(btnGuardar);
 		
 		btnDelete = new JButton("");
+		btnDelete.setBorder(null);
+		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -178,6 +184,7 @@ public class frmPromotores extends JFrame {
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setBounds(231, 46, 48, 46);
+		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 		
 		lblIdPromotor = new JLabel("ID Promotor:");

@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Cursor;
 
 public class frmVehiculo extends JFrame {
 
@@ -129,7 +130,10 @@ public class frmVehiculo extends JFrame {
 		txtIdtipo.setColumns(10);
 		
 		JButton btnGuardar = new JButton("");
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGuardar.setBorder(null);
 		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				cr.create(txtMatricula.getText(), txtModelo.getText(), Integer.parseInt(txtPuestos.getText()), txtModelo.getText(), Integer.parseInt(txtNumeromotor.getText()), txtCategoria.getText(), Integer.parseInt(txtIdtipo.getText()));
@@ -147,6 +151,8 @@ public class frmVehiculo extends JFrame {
 		contentPane.add(btnGuardar);
 		
 		JButton btnDelete = new JButton("");
+		btnDelete.setBorder(null);
+		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -154,6 +160,7 @@ public class frmVehiculo extends JFrame {
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
+		btnDelete.setContentAreaFilled(false);
 		btnDelete.setBounds(269, 57, 48, 46);
 		contentPane.add(btnDelete);
 		
