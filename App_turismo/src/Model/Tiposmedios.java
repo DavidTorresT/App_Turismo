@@ -73,7 +73,7 @@ public class Tiposmedios {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
 		
-		String script = "DELETE FROM tbltiposmedios  WHERE dtipomedio = ?";
+		String script = "DELETE FROM tbltiposmedios  WHERE idtipomedio = ?";
 		
 		try {
 			dbConnection = conector.conectarBD(); // Abrir la conexion
@@ -87,7 +87,7 @@ public class Tiposmedios {
 			if (resp == JOptionPane.OK_OPTION) {
 				//Ejecutar la trx
 				pst.executeUpdate();
-				JOptionPane.showConfirmDialog(null, "Registro No. " +idtipomedio+ "Eliminado");
+				JOptionPane.showConfirmDialog(null, "Registro No. " +idtipomedio+ " Eliminado");
 			}
 			
 		} catch (SQLException e) {

@@ -14,6 +14,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class frmMedios extends JFrame {
 
@@ -23,6 +26,10 @@ public class frmMedios extends JFrame {
 	private JTextField txtObservacion;
 	private JTextField txtTipomedio;
 	private JButton btnNewButton;
+	Medios cr = new Medios();
+	private JLabel lblNewLabel_1;
+	private JTextField txtIdmedios;
+	private JButton btnDelete;
 
 	/**
 	 * Launch the application.
@@ -45,7 +52,7 @@ public class frmMedios extends JFrame {
 	 */
 	public frmMedios() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 335);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -59,38 +66,38 @@ public class frmMedios extends JFrame {
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Nombre:");
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_1_1.setBounds(73, 68, 63, 23);
+		lblNewLabel_1_1.setBounds(91, 118, 63, 23);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Observaciones:");
 		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_1_2.setBounds(73, 114, 100, 23);
+		lblNewLabel_1_2.setBounds(91, 164, 100, 23);
 		contentPane.add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("ID Tipo De Medio:");
 		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_1_3.setBounds(73, 158, 116, 23);
+		lblNewLabel_1_3.setBounds(91, 208, 116, 23);
 		contentPane.add(lblNewLabel_1_3);
 		
 		txtNombre = new JTextField();
-		txtNombre.setBounds(198, 71, 86, 20);
+		txtNombre.setBounds(216, 121, 86, 20);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 		
 		txtObservacion = new JTextField();
-		txtObservacion.setBounds(198, 117, 86, 20);
+		txtObservacion.setBounds(216, 167, 86, 20);
 		contentPane.add(txtObservacion);
 		txtObservacion.setColumns(10);
 		
 		txtTipomedio = new JTextField();
-		txtTipomedio.setBounds(199, 161, 86, 20);
+		txtTipomedio.setBounds(217, 211, 86, 20);
 		contentPane.add(txtTipomedio);
 		txtTipomedio.setColumns(10);
 		
-		btnNewButton = new JButton("Guardar");
+		btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Medios cr = new Medios();
 				cr.create(txtNombre.getText(), txtObservacion.getText(), Integer.parseInt(txtTipomedio.getText()));
 				txtNombre.setText("");
 				txtObservacion.setText("");
@@ -98,8 +105,29 @@ public class frmMedios extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setBounds(155, 207, 100, 23);
+		btnNewButton.setBounds(188, 242, 46, 43);
 		contentPane.add(btnNewButton);
+		
+		lblNewLabel_1 = new JLabel("ID Medio:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(91, 66, 73, 23);
+		contentPane.add(lblNewLabel_1);
+		
+		txtIdmedios = new JTextField();
+		txtIdmedios.setColumns(10);
+		txtIdmedios.setBounds(174, 69, 86, 20);
+		contentPane.add(txtIdmedios);
+		
+		btnDelete = new JButton("");
+		btnDelete.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.delete(Integer.parseInt(txtIdmedios.getText()));
+			}
+		});
+		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
+		btnDelete.setBounds(270, 56, 48, 46);
+		contentPane.add(btnDelete);
 	}
 
 }

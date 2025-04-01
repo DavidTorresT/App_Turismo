@@ -15,6 +15,9 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class frmCompanias extends JFrame {
 
@@ -27,6 +30,10 @@ public class frmCompanias extends JFrame {
 	private JTextField txtFechacreacion;
 	private JTextField txtWeb;
 	private JButton btnGuardar;
+	private JLabel lblIdCompaia;
+	private JTextField txtIdcompania;
+	private JButton btnDelete;
+	Compania cr = new Compania();
 
 	/**
 	 * Launch the application.
@@ -49,7 +56,7 @@ public class frmCompanias extends JFrame {
 	 */
 	public frmCompanias() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 340);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -58,62 +65,62 @@ public class frmCompanias extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Razon Social:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(10, 91, 81, 17);
+		lblNewLabel.setBounds(20, 158, 81, 17);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Direccion:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_1.setBounds(235, 91, 81, 17);
+		lblNewLabel_1.setBounds(245, 161, 81, 17);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Correo:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_2.setBounds(10, 119, 81, 19);
+		lblNewLabel_2.setBounds(20, 186, 81, 19);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("Telefono:");
 		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_2_2.setBounds(235, 121, 81, 14);
+		lblNewLabel_2_2.setBounds(245, 191, 81, 14);
 		contentPane.add(lblNewLabel_2_2);
 		
 		JLabel lblNewLabel_2_3 = new JLabel("Web:");
 		lblNewLabel_2_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_2_3.setBounds(235, 150, 81, 14);
+		lblNewLabel_2_3.setBounds(245, 220, 81, 14);
 		contentPane.add(lblNewLabel_2_3);
 		
 		JLabel lblNewLabel_2_4 = new JLabel("Fecha De Creacion:");
 		lblNewLabel_2_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel_2_4.setBounds(10, 149, 119, 17);
+		lblNewLabel_2_4.setBounds(20, 219, 119, 17);
 		contentPane.add(lblNewLabel_2_4);
 		
 		txtRazonsocial = new JTextField();
-		txtRazonsocial.setBounds(139, 91, 86, 20);
+		txtRazonsocial.setBounds(149, 161, 86, 20);
 		contentPane.add(txtRazonsocial);
 		txtRazonsocial.setColumns(10);
 		
 		txtDireccion = new JTextField();
 		txtDireccion.setColumns(10);
-		txtDireccion.setBounds(312, 91, 86, 20);
+		txtDireccion.setBounds(322, 161, 86, 20);
 		contentPane.add(txtDireccion);
 		
 		txtCorreo = new JTextField();
 		txtCorreo.setColumns(10);
-		txtCorreo.setBounds(139, 120, 86, 20);
+		txtCorreo.setBounds(149, 190, 86, 20);
 		contentPane.add(txtCorreo);
 		
 		txtTelefono = new JTextField();
 		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(312, 120, 86, 20);
+		txtTelefono.setBounds(322, 190, 86, 20);
 		contentPane.add(txtTelefono);
 		
 		txtFechacreacion = new JTextField();
 		txtFechacreacion.setColumns(10);
-		txtFechacreacion.setBounds(139, 149, 86, 20);
+		txtFechacreacion.setBounds(149, 219, 86, 20);
 		contentPane.add(txtFechacreacion);
 		
 		txtWeb = new JTextField();
 		txtWeb.setColumns(10);
-		txtWeb.setBounds(312, 151, 86, 20);
+		txtWeb.setBounds(322, 221, 86, 20);
 		contentPane.add(txtWeb);
 		
 		JLabel lblNewLabel_3 = new JLabel("Gestion de Compañias");
@@ -121,10 +128,10 @@ public class frmCompanias extends JFrame {
 		lblNewLabel_3.setBounds(115, 25, 214, 38);
 		contentPane.add(lblNewLabel_3);
 		
-		btnGuardar = new JButton("Guardar");
+		btnGuardar = new JButton("");
+		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Compania cr = new Compania();
 				cr.create(txtRazonsocial.getText(), txtDireccion.getText(), txtCorreo.getText(), txtTelefono.getText(), txtFechacreacion.getText(), txtWeb.getText());
 				txtRazonsocial.setText("");
 				txtDireccion.setText("");
@@ -135,7 +142,28 @@ public class frmCompanias extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(166, 206, 95, 23);
+		btnGuardar.setBounds(188, 252, 47, 38);
 		contentPane.add(btnGuardar);
+		
+		lblIdCompaia = new JLabel("ID Compañia:");
+		lblIdCompaia.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblIdCompaia.setBounds(73, 99, 86, 17);
+		contentPane.add(lblIdCompaia);
+		
+		txtIdcompania = new JTextField();
+		txtIdcompania.setColumns(10);
+		txtIdcompania.setBounds(169, 99, 86, 20);
+		contentPane.add(txtIdcompania);
+		
+		btnDelete = new JButton("");
+		btnDelete.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.delete(Integer.parseInt(txtIdcompania.getText()));
+			}
+		});
+		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
+		btnDelete.setBounds(265, 84, 48, 46);
+		contentPane.add(btnDelete);
 	}
 }

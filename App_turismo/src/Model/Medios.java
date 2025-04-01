@@ -85,4 +85,30 @@ public class Medios {
 		
 	}
 
+	public void delete(int idmedios) {
+		Connection dbConnection = null;
+		PreparedStatement pst = null; //Preparar la trx
+		
+		String script = "DELETE FROM tblmedios  WHERE idmedios = ?";
+		
+		try {
+			dbConnection = conector.conectarBD(); // Abrir la conexion
+			pst = dbConnection.prepareStatement(script); //Abrir el buffer
+			//Parametrizar los campos
+			pst.setInt(1, idmedios);
+			
+			//Confirmar la operacion
+			int resp = JOptionPane.showConfirmDialog(null, "¿Desea eliminar el registro No. " + idmedios + "?");
+			
+			if (resp == JOptionPane.OK_OPTION) {
+				//Ejecutar la trx
+				pst.executeUpdate();
+				JOptionPane.showConfirmDialog(null, "Registro No. " + idmedios + " Eliminado");
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
 }

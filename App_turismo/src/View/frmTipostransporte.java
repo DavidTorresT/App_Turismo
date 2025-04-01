@@ -14,6 +14,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class frmTipostransporte extends JFrame {
 
@@ -22,6 +25,10 @@ public class frmTipostransporte extends JFrame {
 	private JTextField txtNombre;
 	private JTextField txtObservacion;
 	private JButton btnGuardar;
+	private JLabel lblIdTipoDe;
+	private JTextField txtIdtipo;
+	private JButton btnDelete;
+	Tipostransporte cr = new Tipostransporte();
 
 	/**
 	 * Launch the application.
@@ -44,7 +51,7 @@ public class frmTipostransporte extends JFrame {
 	 */
 	public frmTipostransporte() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 330);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -53,22 +60,22 @@ public class frmTipostransporte extends JFrame {
 		
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNombre.setBounds(50, 55, 66, 25);
+		lblNombre.setBounds(60, 136, 66, 25);
 		contentPane.add(lblNombre);
 		
 		JLabel lblObservacion = new JLabel("Observacion:");
 		lblObservacion.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblObservacion.setBounds(50, 104, 85, 25);
+		lblObservacion.setBounds(60, 169, 85, 25);
 		contentPane.add(lblObservacion);
 		
 		txtNombre = new JTextField();
-		txtNombre.setBounds(155, 59, 86, 20);
+		txtNombre.setBounds(155, 140, 86, 20);
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 		
 		txtObservacion = new JTextField();
 		txtObservacion.setToolTipText("");
-		txtObservacion.setBounds(155, 104, 177, 91);
+		txtObservacion.setBounds(155, 171, 177, 60);
 		contentPane.add(txtObservacion);
 		txtObservacion.setColumns(10);
 		
@@ -77,10 +84,10 @@ public class frmTipostransporte extends JFrame {
 		lblNewLabel_1.setBounds(119, 11, 182, 33);
 		contentPane.add(lblNewLabel_1);
 		
-		btnGuardar = new JButton("Guardar");
+		btnGuardar = new JButton("");
+		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tipostransporte cr = new Tipostransporte();
 				cr.create(txtNombre.getText(), txtObservacion.getText());
 				txtNombre.setText("");
 				txtObservacion.setText("");
@@ -88,8 +95,29 @@ public class frmTipostransporte extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(165, 212, 99, 23);
+		btnGuardar.setBounds(193, 242, 48, 38);
 		contentPane.add(btnGuardar);
+		
+		lblIdTipoDe = new JLabel("ID Tipo De Transporte:");
+		lblIdTipoDe.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblIdTipoDe.setBounds(20, 79, 165, 25);
+		contentPane.add(lblIdTipoDe);
+		
+		txtIdtipo = new JTextField();
+		txtIdtipo.setColumns(10);
+		txtIdtipo.setBounds(193, 79, 89, 24);
+		contentPane.add(txtIdtipo);
+		
+		btnDelete = new JButton("");
+		btnDelete.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.delete(Integer.parseInt(txtIdtipo.getText()));
+			}
+		});
+		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
+		btnDelete.setBounds(292, 58, 48, 46);
+		contentPane.add(btnDelete);
 	}
 
 }

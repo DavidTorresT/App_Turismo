@@ -94,19 +94,21 @@ public class frmTiposmedios extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				
+				
 			}
 		});
-		btnGuardar.setBounds(144, 220, 58, 46);
+		btnGuardar.setBounds(154, 220, 48, 46);
 		contentPane.add(btnGuardar);
 		
 		JLabel lblIdTipoMedio = new JLabel("ID Tipo Medio:");
 		lblIdTipoMedio.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblIdTipoMedio.setBounds(27, 73, 94, 26);
+		lblIdTipoMedio.setBounds(27, 68, 94, 26);
 		contentPane.add(lblIdTipoMedio);
 		
 		txtIdtipomedio = new JTextField();
 		txtIdtipomedio.setColumns(10);
-		txtIdtipomedio.setBounds(144, 78, 86, 20);
+		txtIdtipomedio.setBounds(144, 73, 86, 20);
 		contentPane.add(txtIdtipomedio);
 		
 		JButton btnDelete = new JButton("");
@@ -117,7 +119,7 @@ public class frmTiposmedios extends JFrame {
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
-		btnDelete.setBounds(303, 48, 48, 46);
+		btnDelete.setBounds(240, 53, 48, 46);
 		contentPane.add(btnDelete);
 	}
 }
