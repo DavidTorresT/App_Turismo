@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Cursor;
+import java.awt.Color;
 
 public class frmTiposmedios extends JFrame {
 
@@ -51,6 +52,7 @@ public class frmTiposmedios extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 316);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -88,17 +90,16 @@ public class frmTiposmedios extends JFrame {
 		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cr.create(txtNombre.getText(), txtObservaciones.getText());
-				txtNombre.setText("");
-				txtObservaciones.setText("");
+				
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnGuardar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
-				
+				cr.create(txtNombre.getText(), txtObservaciones.getText());
+				txtNombre.setText("");
+				txtObservaciones.setText("");
 				
 			}
 		});

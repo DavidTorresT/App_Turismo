@@ -20,6 +20,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
+import java.awt.Color;
 
 public class frmOperadores extends JFrame {
 
@@ -62,6 +63,7 @@ public class frmOperadores extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 382, 410);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);

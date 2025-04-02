@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
+import java.awt.Color;
 
 public class frmMedios extends JFrame {
 
@@ -55,6 +56,7 @@ public class frmMedios extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 335);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);

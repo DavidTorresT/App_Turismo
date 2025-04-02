@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Cursor;
+import java.awt.Color;
 
 public class frmTipostransporte extends JFrame {
 
@@ -54,6 +55,7 @@ public class frmTipostransporte extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 330);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -95,7 +97,6 @@ public class frmTipostransporte extends JFrame {
 				cr.create(txtNombre.getText(), txtObservacion.getText());
 				txtNombre.setText("");
 				txtObservacion.setText("");
-				
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
