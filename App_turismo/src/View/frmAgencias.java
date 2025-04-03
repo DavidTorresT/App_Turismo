@@ -54,7 +54,7 @@ public class frmAgencias extends JFrame {
 	 */
 	public frmAgencias() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 354);
+		setBounds(100, 100, 450, 362);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -145,7 +145,7 @@ public class frmAgencias extends JFrame {
 		});
 		
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(187, 258, 45, 46);
+		btnGuardar.setBounds(153, 266, 45, 46);
 		contentPane.add(btnGuardar);
 		
 		JLabel lblIdAgencia = new JLabel("ID Agencia:");
@@ -171,5 +171,18 @@ public class frmAgencias extends JFrame {
 		btnDelete.setBounds(278, 53, 48, 46);
 		contentPane.add(btnDelete);
 		btnDelete.setContentAreaFilled(false);
+		
+		JButton btnConsultar = new JButton("");
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cr.readOne(Integer.parseInt(txtIdagencia.getText()), txtNombre, txtDireccion, txtCorreo, txtTelefono, txtWeb, txtIdcompania);
+			}
+		});
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(216, 266, 45, 46);
+		contentPane.add(btnConsultar);
 	}
 }

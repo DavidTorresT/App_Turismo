@@ -34,11 +34,12 @@ public class frmOperadores extends JFrame {
 	private JTextField txtCorreo;
 	private JTextField txtTelefono;
 	private JButton btnGuardar;
-	private JComboBox cbMatricula;
 	private JLabel lblNewLabel_3;
 	private JTextField txtIdoperador;
 	private JButton btnDelete;
 	Operadores cr = new Operadores();
+	private JButton btnConsultar;
+	private JTextField txtMatricula;
 
 	/**
 	 * Launch the application.
@@ -149,11 +150,6 @@ public class frmOperadores extends JFrame {
 		lblNewLabel_1.setBounds(35, 11, 279, 31);
 		contentPane.add(lblNewLabel_1);
 		
-		cbMatricula = new JComboBox();
-		cbMatricula.setModel(new DefaultComboBoxModel(new String[] {"ASFDS53", "BUS-245", "FJD-304", "HHY-341", "IMO-983", "JKF-G35", "PCK-678", "SUV-345", "TRK-567", "YTT-203"}));
-		cbMatricula.setBounds(197, 280, 86, 22);
-		contentPane.add(cbMatricula);
-		
 		btnGuardar = new JButton("");
 		btnGuardar.setBorder(null);
 		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -161,9 +157,8 @@ public class frmOperadores extends JFrame {
 		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String matricula = "" + cbMatricula.getSelectedItem();
 				cr.create(Integer.parseInt(txtTipodocumento.getText()), Integer.parseInt(txtNumerodocumento.getText()), txtNombres.getText(), txtApellidos.getText(),
-						txtDireccion.getText(), txtCorreo.getText(), txtTelefono.getText(), matricula);
+						txtDireccion.getText(), txtCorreo.getText(), txtTelefono.getText(), txtMatricula.getText());
 				txtTipodocumento.setText("");
 				txtNumerodocumento.setText("");
 				txtNombres.setText("");
@@ -174,7 +169,7 @@ public class frmOperadores extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(148, 313, 51, 47);
+		btnGuardar.setBounds(107, 312, 51, 47);
 		contentPane.add(btnGuardar);
 		
 		lblNewLabel_3 = new JLabel("ID Operador:");
@@ -201,7 +196,25 @@ public class frmOperadores extends JFrame {
 		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 		
+		btnConsultar = new JButton("");
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(Integer.parseInt(txtIdoperador.getText()), txtTipodocumento, txtNumerodocumento, txtNombres, txtApellidos,  txtDireccion, txtCorreo, txtTelefono, txtMatricula );
+			}
+		});
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(180, 313, 45, 46);
+		contentPane.add(btnConsultar);
+		
+		txtMatricula = new JTextField();
+		txtMatricula.setColumns(10);
+		txtMatricula.setBounds(197, 281, 86, 20);
+		contentPane.add(txtMatricula);
+		
 		
 	}
-
 }

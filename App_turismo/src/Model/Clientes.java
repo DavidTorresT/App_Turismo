@@ -2,9 +2,11 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import Controller.Conexion;
 
@@ -217,5 +219,38 @@ public class Clientes {
 		
 	}
 	
+	
+	public void readOne(int idcliente, JTextField tipodocumento, JTextField documento, JTextField nombres, JTextField apellidos, JTextField eps, JTextField alergias, JTextField fechanacimiento, JTextField correo, JTextField estadocivil, JTextField telefono, JTextField direccion) {
+		Connection dbConnection = null;
+		PreparedStatement pst = null; //Preparar la trx
+		
+		String script = "SELECT * FROM tblclientes  WHERE id = ?";
+		
+		try {
+			dbConnection = conector.conectarBD(); // Abrir la conexion
+			pst = dbConnection.prepareStatement(script); //Abrir el buffer
+			
+			pst.setInt(1, idcliente);
+			ResultSet rs = pst.executeQuery(); //Almacenamiento temporal
+			
+			while (rs.next()) {
+				tipodocumento.setText(rs.getString(2));
+				documento.setText(rs.getString(3));
+				nombres.setText(rs.getString(4));
+				apellidos.setText(rs.getString(5));
+				eps.setText(rs.getString(6));
+				alergias.setText(rs.getString(7));
+				fechanacimiento.setText(rs.getString(8));
+				correo.setText(rs.getString(9));
+				estadocivil.setText(rs.getString(10));
+				telefono.setText(rs.getString(11));
+				direccion.setText(rs.getString(12));
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
 	
 }

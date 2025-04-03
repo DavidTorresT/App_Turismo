@@ -2,9 +2,11 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import Controller.Conexion;
 
@@ -120,7 +122,8 @@ public class Promotores {
 
 	
 	Conexion conector = new Conexion();
-		
+	
+	//Crear	
 	public void create(int tipodocumento, int documento, String nombres, String apellidos, String direccion, String correopersonal, String fechanacimiento, String telefono) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -150,6 +153,7 @@ public class Promotores {
 			
 	}
 	
+	//Borrar
 	public void delete(int idpromotor) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -169,6 +173,37 @@ public class Promotores {
 				//Ejecutar la trx
 				pst.executeUpdate();
 				JOptionPane.showConfirmDialog(null, "Registro No. " + idpromotor + " Eliminado");
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	//Consultar
+	public void readOne(int idpromotor, JTextField tipodocumento, JTextField documento, JTextField nombres, JTextField apellidos, JTextField direccion, JTextField correo, JTextField fechanacimiento, JTextField telefono) {
+		Connection dbConnection = null;
+		PreparedStatement pst = null; //Preparar la trx
+		
+		String script = "SELECT * FROM tblpromotores  WHERE id = ?";
+		
+		try {
+			dbConnection = conector.conectarBD(); // Abrir la conexion
+			pst = dbConnection.prepareStatement(script); //Abrir el buffer
+			
+			pst.setInt(1, idpromotor);
+			ResultSet rs = pst.executeQuery(); //Almacenamiento temporal
+			
+			while (rs.next()) {
+				tipodocumento.setText(rs.getString(2));
+				documento.setText(rs.getString(3));
+				nombres.setText(rs.getString(4));
+				apellidos.setText(rs.getString(5));
+				direccion.setText(rs.getString(6));
+				correo.setText(rs.getString(7));
+				fechanacimiento.setText(rs.getString(8));
+				telefono.setText(rs.getString(9));
 			}
 			
 		} catch (SQLException e) {

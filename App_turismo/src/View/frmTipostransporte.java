@@ -31,6 +31,7 @@ public class frmTipostransporte extends JFrame {
 	private JTextField txtIdtipo;
 	private JButton btnDelete;
 	Tipostransporte cr = new Tipostransporte();
+	private JButton btnConsultar;
 
 	/**
 	 * Launch the application.
@@ -100,7 +101,7 @@ public class frmTipostransporte extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(193, 242, 48, 38);
+		btnGuardar.setBounds(165, 242, 48, 38);
 		contentPane.add(btnGuardar);
 		
 		lblIdTipoDe = new JLabel("ID Tipo De Transporte:");
@@ -126,6 +127,20 @@ public class frmTipostransporte extends JFrame {
 		btnDelete.setBounds(292, 58, 48, 46);
 		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
+		
+		btnConsultar = new JButton("");
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(Integer.parseInt(txtIdtipo.getText()), txtNombre, txtObservacion);
+			}
+		});
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(237, 234, 45, 46);
+		contentPane.add(btnConsultar);
 	}
 
 }

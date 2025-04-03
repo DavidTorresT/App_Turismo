@@ -37,6 +37,7 @@ public class frmPromotores extends JFrame {
 	private JButton btnDelete;
 	private JLabel lblIdPromotor;
 	private JTextField txtIdpromotor;
+	private JButton btnConsultar;
 
 	/**
 	 * Launch the application.
@@ -172,7 +173,7 @@ public class frmPromotores extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(162, 309, 42, 46);
+		btnGuardar.setBounds(120, 309, 42, 46);
 		contentPane.add(btnGuardar);
 		
 		btnDelete = new JButton("");
@@ -198,6 +199,20 @@ public class frmPromotores extends JFrame {
 		txtIdpromotor.setColumns(10);
 		txtIdpromotor.setBounds(142, 61, 86, 20);
 		contentPane.add(txtIdpromotor);
+		
+		btnConsultar = new JButton("");
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(Integer.parseInt(txtIdpromotor.getText()), txtTipodocumento, txtNumerodocumento, txtNombres, txtApellidos, txtDireccion, txtCorreo, txtFechanacimiento, txtTelefono);
+			}
+		});
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(183, 309, 45, 46);
+		contentPane.add(btnConsultar);
 	}
 
 }

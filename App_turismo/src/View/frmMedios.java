@@ -26,12 +26,13 @@ public class frmMedios extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtNombre;
 	private JTextField txtObservacion;
-	private JTextField txtTipomedio;
+	private JTextField txtIdtipomedio;
 	private JButton btnGuardar;
 	Medios cr = new Medios();
 	private JLabel lblNewLabel_1;
 	private JTextField txtIdmedios;
 	private JButton btnDelete;
+	private JButton btnConsultar;
 
 	/**
 	 * Launch the application.
@@ -54,7 +55,7 @@ public class frmMedios extends JFrame {
 	 */
 	public frmMedios() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 335);
+		setBounds(100, 100, 450, 351);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -92,10 +93,10 @@ public class frmMedios extends JFrame {
 		contentPane.add(txtObservacion);
 		txtObservacion.setColumns(10);
 		
-		txtTipomedio = new JTextField();
-		txtTipomedio.setBounds(217, 211, 86, 20);
-		contentPane.add(txtTipomedio);
-		txtTipomedio.setColumns(10);
+		txtIdtipomedio = new JTextField();
+		txtIdtipomedio.setBounds(217, 211, 86, 20);
+		contentPane.add(txtIdtipomedio);
+		txtIdtipomedio.setColumns(10);
 		
 		btnGuardar = new JButton("");
 		btnGuardar.setBorder(null);
@@ -104,14 +105,14 @@ public class frmMedios extends JFrame {
 		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cr.create(txtNombre.getText(), txtObservacion.getText(), Integer.parseInt(txtTipomedio.getText()));
+				cr.create(txtNombre.getText(), txtObservacion.getText(), Integer.parseInt(txtIdtipomedio.getText()));
 				txtNombre.setText("");
 				txtObservacion.setText("");
-				txtTipomedio.setText("");
+				txtIdtipomedio.setText("");
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(188, 242, 46, 43);
+		btnGuardar.setBounds(174, 258, 46, 43);
 		contentPane.add(btnGuardar);
 		
 		lblNewLabel_1 = new JLabel("ID Medio:");
@@ -134,8 +135,23 @@ public class frmMedios extends JFrame {
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
+		btnDelete.setContentAreaFilled(false);
 		btnDelete.setBounds(270, 56, 48, 46);
 		contentPane.add(btnDelete);
+		
+		btnConsultar = new JButton("");
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(Integer.parseInt(txtIdmedios.getText()), txtNombre, txtObservacion, txtIdtipomedio);
+			}
+		});
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(241, 255, 45, 46);
+		contentPane.add(btnConsultar);
 	}
 
 }

@@ -129,5 +129,19 @@ public class frmTiposmedios extends JFrame {
 		btnDelete.setBounds(240, 53, 48, 46);
 		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
+		
+		JButton btnConsultar = new JButton("");
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.setBorder(null);
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(Integer.parseInt(txtIdtipomedio.getText()), txtNombre, txtObservaciones);
+			}
+		});
+		btnConsultar.setBounds(222, 220, 42, 46);
+		contentPane.add(btnConsultar);
 	}
 }

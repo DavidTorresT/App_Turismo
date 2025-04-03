@@ -43,6 +43,7 @@ public class frmPaquetes extends JFrame {
 	private JTextField txtPrecio;
 	private JTextField txtIdpaquete;
 	Paquetes cr = new Paquetes();
+	private JTextField txtMatricula;
 
 	/**
 	 * Launch the application.
@@ -158,11 +159,6 @@ public class frmPaquetes extends JFrame {
 		contentPane.add(txtHoraventa);
 		txtHoraventa.setColumns(10);
 		
-		JComboBox cbMatricula = new JComboBox();
-		cbMatricula.setModel(new DefaultComboBoxModel(new String[] {"ASFDS53", "BUS-245", "FJD-304", "HHY-341", "IMO-983", "JKF-G35", "PCK-678", "SUV-345", "TRK-567", "YTT-203"}));
-		cbMatricula.setBounds(319, 301, 86, 22);
-		contentPane.add(cbMatricula);
-		
 		JButton btnGuardar = new JButton("");
 		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnGuardar.setBorder(null);
@@ -171,9 +167,8 @@ public class frmPaquetes extends JFrame {
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Paquetes cr = new Paquetes();
-				String matricula = "" + cbMatricula.getSelectedItem();
 				cr.create(Integer.parseInt(txtIddestino.getText()), Integer.parseInt(txtIdorigen.getText()), txtFechaventa.getText(), txtHoraventa.getText(), txtHorasalida.getText(),
-						txtFechaejecucion.getText(), txtObservacion.getText(), Integer.parseInt(txtIdpromotor.getText()), Integer.parseInt(txtIdmedio.getText()), Integer.parseInt(txtIdcliente.getText()), Integer.parseInt(txtIdagencia.getText()), matricula, txtPrecio.getText());
+						txtFechaejecucion.getText(), txtObservacion.getText(), Integer.parseInt(txtIdpromotor.getText()), Integer.parseInt(txtIdmedio.getText()), Integer.parseInt(txtIdcliente.getText()), Integer.parseInt(txtIdagencia.getText()), txtMatricula.getText(), txtPrecio.getText());
 				txtIddestino.setText("");
 				txtIdorigen.setText("");
 				txtFechaventa.setText("");
@@ -261,6 +256,11 @@ public class frmPaquetes extends JFrame {
 		lblNewLabel_1_3_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_1_3_2_1.setBounds(75, 67, 86, 22);
 		contentPane.add(lblNewLabel_1_3_2_1);
+		
+		txtMatricula = new JTextField();
+		txtMatricula.setColumns(10);
+		txtMatricula.setBounds(319, 302, 86, 20);
+		contentPane.add(txtMatricula);
 		
 		
 	}

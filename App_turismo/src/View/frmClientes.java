@@ -41,6 +41,7 @@ public class frmClientes extends JFrame {
 	private JLabel lblIdCliente;
 	private JTextField txtIdcliente;
 	private JButton btnDelete;
+	private JButton btnConsultar;
 
 	/**
 	 * Launch the application.
@@ -63,7 +64,7 @@ public class frmClientes extends JFrame {
 	 */
 	public frmClientes() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 440, 415);
+		setBounds(100, 100, 440, 430);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -209,7 +210,7 @@ public class frmClientes extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(190, 326, 46, 39);
+		btnGuardar.setBounds(176, 341, 46, 39);
 		contentPane.add(btnGuardar);
 		
 		lblIdCliente = new JLabel("ID Cliente:");
@@ -236,5 +237,19 @@ public class frmClientes extends JFrame {
 		btnDelete.setContentAreaFilled(false);
 		btnDelete.setBounds(246, 69, 52, 51);
 		contentPane.add(btnDelete);
+		
+		btnConsultar = new JButton("");
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(Integer.parseInt(txtIdcliente.getText()), txtTipodocumento, txtDocumento, txtNombres, txtApellidos, txtEps, txtAlergias, txtFechanacimiento, txtCorreo, txtEstadocivil, txtTelefono, txtDireccion);
+			}
+		});
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(232, 334, 45, 46);
+		contentPane.add(btnConsultar);
 	}
 }
