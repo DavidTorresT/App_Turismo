@@ -160,6 +160,7 @@ public class Clientes {
 	
     Conexion conector = new Conexion();
 	
+    //Crear
 	public void create(int tipodocumento, int documento, String nombres, String apellidos, String eps, String alergias, String fechanacimiento, String correo, String estadocivil, String telefono, String direccion) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -192,6 +193,7 @@ public class Clientes {
 		
 	}
 	
+	//Borrar
 	public void delete(int idcliente) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -219,7 +221,7 @@ public class Clientes {
 		
 	}
 	
-	
+	//Consultar
 	public void readOne(int idcliente, JTextField tipodocumento, JTextField documento, JTextField nombres, JTextField apellidos, JTextField eps, JTextField alergias, JTextField fechanacimiento, JTextField correo, JTextField estadocivil, JTextField telefono, JTextField direccion) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx

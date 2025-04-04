@@ -31,7 +31,6 @@ public class frmVehiculo extends JFrame {
 	private JTextField txtNumeromotor;
 	private JTextField txtCategoria;
 	private JTextField txtIdtipo;
-	private JTextField txtIdvehiculo;
 	Vehiculos cr = new Vehiculos();
 
 	/**
@@ -55,7 +54,7 @@ public class frmVehiculo extends JFrame {
 	 */
 	public frmVehiculo() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 381, 424);
+		setBounds(100, 100, 381, 413);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -69,65 +68,66 @@ public class frmVehiculo extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Matricula:");
-		lblNewLabel_1.setBounds(52, 125, 67, 24);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(52, 70, 67, 24);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Marca:");
-		lblNewLabel_1_1.setBounds(200, 125, 67, 24);
+		lblNewLabel_1_1.setBounds(52, 122, 67, 24);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Puestos:");
-		lblNewLabel_1_2.setBounds(52, 179, 67, 24);
+		lblNewLabel_1_2.setBounds(200, 122, 67, 24);
 		contentPane.add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_2_1 = new JLabel("Modelo:");
-		lblNewLabel_1_2_1.setBounds(200, 179, 67, 24);
+		lblNewLabel_1_2_1.setBounds(52, 174, 67, 24);
 		contentPane.add(lblNewLabel_1_2_1);
 		
 		JLabel lblNewLabel_1_2_2 = new JLabel("Numero De Motor:");
-		lblNewLabel_1_2_2.setBounds(52, 232, 94, 24);
+		lblNewLabel_1_2_2.setBounds(200, 174, 115, 24);
 		contentPane.add(lblNewLabel_1_2_2);
 		
 		JLabel lblNewLabel_1_2_3 = new JLabel("Categoria:");
-		lblNewLabel_1_2_3.setBounds(200, 232, 67, 24);
+		lblNewLabel_1_2_3.setBounds(52, 227, 67, 24);
 		contentPane.add(lblNewLabel_1_2_3);
 		
 		JLabel lblNewLabel_1_2_4 = new JLabel("ID Tipo De Transporte:");
-		lblNewLabel_1_2_4.setBounds(52, 286, 110, 24);
+		lblNewLabel_1_2_4.setBounds(200, 227, 131, 24);
 		contentPane.add(lblNewLabel_1_2_4);
 		
 		txtMatricula = new JTextField();
-		txtMatricula.setBounds(52, 148, 86, 20);
+		txtMatricula.setBounds(129, 72, 86, 20);
 		contentPane.add(txtMatricula);
 		txtMatricula.setColumns(10);
 		
 		txtMarca = new JTextField();
-		txtMarca.setBounds(200, 148, 86, 20);
+		txtMarca.setBounds(52, 143, 86, 20);
 		contentPane.add(txtMarca);
 		txtMarca.setColumns(10);
 		
 		txtPuestos = new JTextField();
-		txtPuestos.setBounds(52, 201, 86, 20);
+		txtPuestos.setBounds(200, 143, 86, 20);
 		contentPane.add(txtPuestos);
 		txtPuestos.setColumns(10);
 		
 		txtModelo = new JTextField();
-		txtModelo.setBounds(200, 201, 86, 20);
+		txtModelo.setBounds(52, 196, 86, 20);
 		contentPane.add(txtModelo);
 		txtModelo.setColumns(10);
 		
 		txtNumeromotor = new JTextField();
-		txtNumeromotor.setBounds(52, 255, 86, 20);
+		txtNumeromotor.setBounds(200, 196, 86, 20);
 		contentPane.add(txtNumeromotor);
 		txtNumeromotor.setColumns(10);
 		
 		txtCategoria = new JTextField();
-		txtCategoria.setBounds(200, 255, 86, 20);
+		txtCategoria.setBounds(52, 249, 86, 20);
 		contentPane.add(txtCategoria);
 		txtCategoria.setColumns(10);
 		
 		txtIdtipo = new JTextField();
-		txtIdtipo.setBounds(52, 308, 86, 20);
+		txtIdtipo.setBounds(200, 249, 86, 20);
 		contentPane.add(txtIdtipo);
 		txtIdtipo.setColumns(10);
 		
@@ -149,7 +149,7 @@ public class frmVehiculo extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(150, 339, 48, 46);
+		btnGuardar.setBounds(112, 291, 48, 46);
 		contentPane.add(btnGuardar);
 		
 		JButton btnDelete = new JButton("");
@@ -158,23 +158,26 @@ public class frmVehiculo extends JFrame {
 		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				cr.delete(txtIdvehiculo.getText());
+				cr.delete(txtMatricula.getText());
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setContentAreaFilled(false);
-		btnDelete.setBounds(269, 57, 48, 46);
+		btnDelete.setBounds(239, 58, 48, 46);
 		contentPane.add(btnDelete);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("Matricula Del Vehiculo:");
-		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1_3.setBounds(31, 68, 122, 24);
-		contentPane.add(lblNewLabel_1_3);
-		
-		txtIdvehiculo = new JTextField();
-		txtIdvehiculo.setColumns(10);
-		txtIdvehiculo.setBounds(162, 71, 86, 20);
-		contentPane.add(txtIdvehiculo);
+		JButton btnConsultar = new JButton("");
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(txtMatricula.getText(), txtMarca, txtPuestos, txtModelo, txtNumeromotor, txtCategoria, txtIdtipo);
+			}
+		});
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(180, 291, 45, 46);
+		contentPane.add(btnConsultar);
 	}
-
 }

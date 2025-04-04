@@ -48,6 +48,7 @@ public class Tiposmedios {
 
 	Conexion conector = new Conexion();
 	
+	//Crear
 	public void create(String nombre, String observaciones) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -71,6 +72,7 @@ public class Tiposmedios {
 		
 	}
 
+	//Borrar
 	public void delete(int idtipomedio) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -98,7 +100,7 @@ public class Tiposmedios {
 		
 	}
 	
-	
+	//Consultar
 	public void readOne(int idtipomedio, JTextField nombres, JTextField observacion) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx

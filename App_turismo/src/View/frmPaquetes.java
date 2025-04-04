@@ -41,7 +41,7 @@ public class frmPaquetes extends JFrame {
 	private JTextField txtIdcliente;
 	private JTextField txtIdagencia;
 	private JTextField txtPrecio;
-	private JTextField txtIdpaquete;
+	private JTextField txtCodigo;
 	Paquetes cr = new Paquetes();
 	private JTextField txtMatricula;
 
@@ -184,7 +184,7 @@ public class frmPaquetes extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(181, 392, 46, 46);
+		btnGuardar.setBounds(141, 392, 46, 46);
 		contentPane.add(btnGuardar);
 		
 		txtHorasalida = new JTextField();
@@ -238,7 +238,7 @@ public class frmPaquetes extends JFrame {
 		btnDelete.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				cr.delete(Integer.parseInt(txtIdpaquete.getText()));
+				cr.delete(Integer.parseInt(txtCodigo.getText()));
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
@@ -247,12 +247,12 @@ public class frmPaquetes extends JFrame {
 		btnDelete.setBounds(263, 57, 46, 46);
 		contentPane.add(btnDelete);
 		
-		txtIdpaquete = new JTextField();
-		txtIdpaquete.setColumns(10);
-		txtIdpaquete.setBounds(157, 70, 86, 20);
-		contentPane.add(txtIdpaquete);
+		txtCodigo = new JTextField();
+		txtCodigo.setColumns(10);
+		txtCodigo.setBounds(157, 70, 86, 20);
+		contentPane.add(txtCodigo);
 		
-		JLabel lblNewLabel_1_3_2_1 = new JLabel("ID Paquete:");
+		JLabel lblNewLabel_1_3_2_1 = new JLabel("Codigo:");
 		lblNewLabel_1_3_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_1_3_2_1.setBounds(75, 67, 86, 22);
 		contentPane.add(lblNewLabel_1_3_2_1);
@@ -261,6 +261,20 @@ public class frmPaquetes extends JFrame {
 		txtMatricula.setColumns(10);
 		txtMatricula.setBounds(319, 302, 86, 20);
 		contentPane.add(txtMatricula);
+		
+		JButton btnConsultar = new JButton("");
+		btnConsultar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.readOne(Integer.parseInt(txtCodigo.getText()), txtIddestino, txtIdorigen, txtFechaventa, txtHoraventa, txtHorasalida, txtFechaejecucion, txtObservacion, txtIdpromotor, txtIdmedio, txtIdcliente, txtIdagencia, txtMatricula, txtPrecio);
+			}
+		});
+		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
+		btnConsultar.setContentAreaFilled(false);
+		btnConsultar.setBorder(null);
+		btnConsultar.setBounds(219, 392, 45, 46);
+		contentPane.add(btnConsultar);
 		
 		
 	}

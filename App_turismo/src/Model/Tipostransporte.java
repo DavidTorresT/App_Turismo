@@ -50,6 +50,7 @@ public class Tipostransporte {
 	
     Conexion conector = new Conexion();
 	
+    //Crear
 	public void create(String nombre, String observacion) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -73,6 +74,7 @@ public class Tipostransporte {
 		
 	}
 	
+	//Borrar
 	public void delete(int idtipo) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx

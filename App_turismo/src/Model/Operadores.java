@@ -124,6 +124,7 @@ public class Operadores {
 	
 	Conexion conector = new Conexion();
 		
+	//Crear
 	public void create(int tipodocumento, int documento, String nombres, String apellidos, String direccion, String correo, String telefono, String matricula) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -153,6 +154,7 @@ public class Operadores {
 			
 	}
 
+	//Borrrar
 	public void delete(int idoperador) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -180,6 +182,7 @@ public class Operadores {
 		
 	}
 	
+	//Consultar
 	public void readOne(int idoperador, JTextField tipodocumento, JTextField documento, JTextField nombres, JTextField apellidos, JTextField direccion, JTextField correo, JTextField telefono, JTextField matricula) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -201,7 +204,7 @@ public class Operadores {
 				direccion.setText(rs.getString(6));
 				correo.setText(rs.getString(7));
 				telefono.setText(rs.getString(8));
-				matricula.setToolTipText(rs.getString(9));
+				matricula.setText(rs.getString(9));
 			}
 			
 		} catch (SQLException e) {

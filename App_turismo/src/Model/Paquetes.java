@@ -2,9 +2,11 @@ package Model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import Controller.Conexion;
 
@@ -181,6 +183,7 @@ public class Paquetes {
 	
     Conexion conector = new Conexion();
 	
+    //Crear
 	public void create(int iddestino, int idorigen, String fechaventa, String horaventa, String horasalida, String fechaejecucion, String observacion, int idpromotor, int idmedio, int idcliente, int idagencia, String matricula, String precio) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -215,6 +218,7 @@ public class Paquetes {
 		
 	}
 	
+	//Borrar
 	public void delete(int codigo) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -234,6 +238,43 @@ public class Paquetes {
 				//Ejecutar la trx
 				pst.executeUpdate();
 				JOptionPane.showConfirmDialog(null, "Registro No. " + codigo + " Eliminado");
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	//Consultar
+	public void readOne(int codigo, JTextField iddestino, JTextField idorigen, JTextField fechaventa, JTextField horaventa, JTextField horasalida, JTextField fechaejecucion, JTextField observacion, JTextField idpromotor, JTextField idmedios, JTextField idcliente, JTextField idagencia, JTextField matricula, JTextField precio) {
+		Connection dbConnection = null;
+		PreparedStatement pst = null; //Preparar la trx
+		
+		String script = "SELECT * FROM tblpaquetes  WHERE codigo = ?";
+		
+		try {
+			dbConnection = conector.conectarBD(); // Abrir la conexion
+			pst = dbConnection.prepareStatement(script); //Abrir el buffer
+			
+			pst.setInt(1, codigo);
+			ResultSet rs = pst.executeQuery(); //Almacenamiento temporal
+			
+			while (rs.next()) {
+				iddestino.setText(rs.getString(2));
+				idorigen.setText(rs.getString(3));
+				fechaventa.setText(rs.getString(4));
+				horaventa.setText(rs.getString(5));
+				horasalida.setText(rs.getString(6));
+				fechaejecucion.setText(rs.getString(7));
+				observacion.setText(rs.getString(8));
+				idpromotor.setText(rs.getString(9));
+				idmedios.setText(rs.getString(10));
+				idcliente.setText(rs.getString(11));
+				idagencia.setText(rs.getString(12));
+				matricula.setText(rs.getString(13));
+				precio.setText(rs.getString(14));
+				
 			}
 			
 		} catch (SQLException e) {

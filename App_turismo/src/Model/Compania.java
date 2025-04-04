@@ -98,6 +98,7 @@ public class Compania {
 
     Conexion conector = new Conexion();
 	
+    //Crear
 	public void create(String razonsocial, String direccion, String correo, String telefono, String fechacreacion, String web) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -125,6 +126,7 @@ public class Compania {
 		
 	}
 	
+	//Borrar
 	public void delete(int idcompania) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
@@ -152,6 +154,7 @@ public class Compania {
 		
 	}
 	
+	//Consultar
 	public void readOne(int idcompania, JTextField razonsocial, JTextField direccion, JTextField correo, JTextField telefono, JTextField fechacreacion, JTextField web) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; //Preparar la trx
