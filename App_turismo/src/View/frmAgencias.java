@@ -165,6 +165,12 @@ public class frmAgencias extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdagencia.getText()));
+				txtNombre.setText("");
+				txtDireccion.setText("");
+				txtCorreo.setText("");
+				txtTelefono.setText("");
+				txtWeb.setText("");
+				txtIdcompania.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));

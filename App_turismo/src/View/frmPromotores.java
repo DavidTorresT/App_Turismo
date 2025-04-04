@@ -59,7 +59,7 @@ public class frmPromotores extends JFrame {
 	 * Create the frame.
 	 */
 	public frmPromotores() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 402, 405);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(133, 188, 136));
@@ -183,6 +183,14 @@ public class frmPromotores extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdpromotor.getText()));
+				txtTipodocumento.setText("");
+				txtNumerodocumento.setText("");
+				txtNombres.setText("");
+				txtApellidos.setText("");
+				txtDireccion.setText("");
+				txtCorreo.setText("");
+				txtFechanacimiento.setText("");
+				txtTelefono.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));

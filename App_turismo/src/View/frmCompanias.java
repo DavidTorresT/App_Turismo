@@ -169,6 +169,12 @@ public class frmCompanias extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdcompania.getText()));
+				txtRazonsocial.setText("");
+				txtDireccion.setText("");
+				txtCorreo.setText("");
+				txtTelefono.setText("");
+				txtFechacreacion.setText("");
+				txtWeb.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));

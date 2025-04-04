@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import Controller.Conexion;
+import View.frmPrincipal;
 
 public class Promotores {
 	
@@ -204,6 +205,33 @@ public class Promotores {
 				correo.setText(rs.getString(7));
 				fechanacimiento.setText(rs.getString(8));
 				telefono.setText(rs.getString(9));
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
+	
+	public void controlAcceso(int user, String pass) {
+		Connection dbConnection = null;
+		PreparedStatement pst = null; //Preparar la trx
+		
+		String script = "SELECT * FROM tblpromotores  WHERE documento = ? and contrasena = ?";
+		
+		try {
+			dbConnection = conector.conectarBD(); // Abrir la conexion
+			pst = dbConnection.prepareStatement(script); //Abrir el buffer
+			
+			pst.setInt(1, user);
+			pst.setString(2, pass);
+			ResultSet rs = pst.executeQuery(); //Almacenamiento temporal
+			
+			while (rs.next()) {
+				frmPrincipal principal = new frmPrincipal();
+				principal.show();
+				//JOptionPane.showConfirmDialog(null, "Acceso permitido");
 			}
 			
 		} catch (SQLException e) {

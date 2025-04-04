@@ -239,6 +239,18 @@ public class frmPaquetes extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtCodigo.getText()));
+				txtIddestino.setText("");
+				txtIdorigen.setText("");
+				txtFechaventa.setText("");
+				txtHoraventa.setText("");
+				txtHorasalida.setText("");
+				txtFechaejecucion.setText("");
+				txtObservacion.setText("");
+				txtIdpromotor.setText("");
+				txtIdmedio.setText("");
+				txtIdcliente.setText("");
+				txtIdagencia.setText("");
+				txtPrecio.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));

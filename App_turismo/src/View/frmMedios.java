@@ -132,6 +132,9 @@ public class frmMedios extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdmedios.getText()));
+				txtNombre.setText("");
+				txtObservacion.setText("");
+				txtIdtipomedio.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));

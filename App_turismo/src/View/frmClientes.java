@@ -230,6 +230,17 @@ public class frmClientes extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdcliente.getText()));
+				txtTipodocumento.setText("");
+				txtDocumento.setText("");
+				txtNombres.setText("");
+				txtApellidos.setText("");
+				txtEps.setText("");
+				txtAlergias.setText("");
+				txtFechanacimiento.setText("");
+				txtCorreo.setText("");
+				txtEstadocivil.setText("");
+				txtTelefono.setText("");
+				txtDireccion.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
