@@ -78,6 +78,7 @@ public class frmPrincipal extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnVehiculos = new JButton("");
+		btnVehiculos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVehiculos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -101,6 +102,7 @@ public class frmPrincipal extends JFrame {
 		contentPane.add(lblNewLabel_1_1);
 		
 		JButton btnCompania = new JButton("");
+		btnCompania.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCompania.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -120,6 +122,7 @@ public class frmPrincipal extends JFrame {
 		contentPane.add(lblNewLabel_1_1_1);
 		
 		JButton btnCliente = new JButton("");
+		btnCliente.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCliente.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -137,6 +140,26 @@ public class frmPrincipal extends JFrame {
 		lblNewLabel_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1_1_1.setBounds(249, 88, 65, 14);
 		contentPane.add(lblNewLabel_1_1_1_1);
+		
+		JButton btnCliente_1 = new JButton("");
+		btnCliente_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmAgencias view = new frmAgencias();
+				view.show();
+			}
+		});
+		btnCliente_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnCliente_1.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035776_airplane_sharp_icon.png"));
+		btnCliente_1.setContentAreaFilled(false);
+		btnCliente_1.setBorder(null);
+		btnCliente_1.setBounds(324, 104, 65, 49);
+		contentPane.add(btnCliente_1);
+		
+		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Agencias");
+		lblNewLabel_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_1_1_1.setBounds(324, 88, 65, 14);
+		contentPane.add(lblNewLabel_1_1_1_1_1);
 	}
 
 }

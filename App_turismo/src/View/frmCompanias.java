@@ -58,7 +58,7 @@ public class frmCompanias extends JFrame {
 	 * Create the frame.
 	 */
 	public frmCompanias() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 361);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(133, 188, 136));
