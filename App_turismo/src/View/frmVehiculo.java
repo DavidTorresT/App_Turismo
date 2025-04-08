@@ -149,7 +149,7 @@ public class frmVehiculo extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(112, 291, 48, 46);
+		btnGuardar.setBounds(64, 292, 48, 46);
 		contentPane.add(btnGuardar);
 		
 		JButton btnDelete = new JButton("");
@@ -170,7 +170,7 @@ public class frmVehiculo extends JFrame {
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setContentAreaFilled(false);
-		btnDelete.setBounds(239, 58, 48, 46);
+		btnDelete.setBounds(235, 292, 48, 46);
 		contentPane.add(btnDelete);
 		
 		JButton btnConsultar = new JButton("");
@@ -184,7 +184,21 @@ public class frmVehiculo extends JFrame {
 		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
 		btnConsultar.setContentAreaFilled(false);
 		btnConsultar.setBorder(null);
-		btnConsultar.setBounds(180, 291, 45, 46);
+		btnConsultar.setBounds(122, 292, 45, 46);
 		contentPane.add(btnConsultar);
+		
+		JButton btnActualizar = new JButton("");
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.update(txtMatricula.getText(), txtMarca.getText(), Integer.parseInt(txtPuestos.getText()), txtModelo.getText(), Integer.parseInt(txtNumeromotor.getText()), txtCategoria.getText(), Integer.parseInt(txtIdtipo.getText()));
+			}
+		});
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(177, 292, 48, 46);
+		contentPane.add(btnActualizar);
 	}
 }

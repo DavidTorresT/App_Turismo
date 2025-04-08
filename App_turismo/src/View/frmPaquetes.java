@@ -184,7 +184,7 @@ public class frmPaquetes extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(141, 392, 46, 46);
+		btnGuardar.setBounds(100, 392, 46, 46);
 		contentPane.add(btnGuardar);
 		
 		txtHorasalida = new JTextField();
@@ -256,7 +256,7 @@ public class frmPaquetes extends JFrame {
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setContentAreaFilled(false);
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnDelete.setBounds(263, 57, 46, 46);
+		btnDelete.setBounds(269, 392, 46, 46);
 		contentPane.add(btnDelete);
 		
 		txtCodigo = new JTextField();
@@ -285,8 +285,22 @@ public class frmPaquetes extends JFrame {
 		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
 		btnConsultar.setContentAreaFilled(false);
 		btnConsultar.setBorder(null);
-		btnConsultar.setBounds(219, 392, 45, 46);
+		btnConsultar.setBounds(156, 392, 45, 46);
 		contentPane.add(btnConsultar);
+		
+		JButton btnActualizar = new JButton("");
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.update(Integer.parseInt(txtCodigo.getText()), Integer.parseInt(txtIddestino.getText()), Integer.parseInt(txtIdorigen.getText()), txtFechaventa.getText(), txtHoraventa.getText(), txtHorasalida.getText(), txtFechaejecucion.getText(), txtObservacion.getText(), Integer.parseInt(txtIdpromotor.getText()), Integer.parseInt(txtIdmedio.getText()), Integer.parseInt(txtIdcliente.getText()), Integer.parseInt(txtIdagencia.getText()), txtMatricula.getText(), txtPrecio.getText());
+			}
+		});
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(211, 392, 48, 46);
+		contentPane.add(btnActualizar);
 		
 		
 	}

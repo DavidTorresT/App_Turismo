@@ -37,6 +37,7 @@ public class frmCompanias extends JFrame {
 	private JButton btnDelete;
 	Compania cr = new Compania();
 	private JButton btnConsultar;
+	private JButton btnActualizar;
 
 	/**
 	 * Launch the application.
@@ -149,7 +150,7 @@ public class frmCompanias extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(169, 273, 47, 38);
+		btnGuardar.setBounds(103, 265, 47, 46);
 		contentPane.add(btnGuardar);
 		
 		lblIdCompaia = new JLabel("ID Compañia:");
@@ -178,7 +179,7 @@ public class frmCompanias extends JFrame {
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
-		btnDelete.setBounds(265, 84, 48, 46);
+		btnDelete.setBounds(273, 265, 48, 46);
 		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 		
@@ -193,7 +194,20 @@ public class frmCompanias extends JFrame {
 		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
 		btnConsultar.setContentAreaFilled(false);
 		btnConsultar.setBorder(null);
-		btnConsultar.setBounds(226, 265, 45, 46);
+		btnConsultar.setBounds(160, 265, 45, 46);
 		contentPane.add(btnConsultar);
+		
+		btnActualizar = new JButton("");
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				cr.update(Integer.parseInt(txtIdcompania.getText()), txtRazonsocial.getText(), txtDireccion.getText(), txtCorreo.getText(), txtTelefono.getText(), txtFechacreacion.getText(), txtWeb.getText());
+			}
+		});
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(215, 265, 48, 46);
+		contentPane.add(btnActualizar);
 	}
 }

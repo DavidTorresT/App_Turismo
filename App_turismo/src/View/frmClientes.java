@@ -42,6 +42,7 @@ public class frmClientes extends JFrame {
 	private JTextField txtIdcliente;
 	private JButton btnDelete;
 	private JButton btnConsultar;
+	private JButton btnActualizar;
 
 	/**
 	 * Launch the application.
@@ -210,7 +211,7 @@ public class frmClientes extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(176, 341, 46, 39);
+		btnGuardar.setBounds(90, 334, 46, 46);
 		contentPane.add(btnGuardar);
 		
 		lblIdCliente = new JLabel("ID Cliente:");
@@ -246,7 +247,7 @@ public class frmClientes extends JFrame {
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnDelete.setContentAreaFilled(false);
-		btnDelete.setBounds(246, 69, 52, 51);
+		btnDelete.setBounds(259, 329, 52, 51);
 		contentPane.add(btnDelete);
 		
 		btnConsultar = new JButton("");
@@ -260,7 +261,21 @@ public class frmClientes extends JFrame {
 		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
 		btnConsultar.setContentAreaFilled(false);
 		btnConsultar.setBorder(null);
-		btnConsultar.setBounds(232, 334, 45, 46);
+		btnConsultar.setBounds(146, 334, 45, 46);
 		contentPane.add(btnConsultar);
+		
+		btnActualizar = new JButton("");
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.update(Integer.parseInt(txtIdcliente.getText()), txtTipodocumento.getText(), Integer.parseInt(txtDocumento.getText()), txtNombres.getText(), txtApellidos.getText(), txtEps.getText(), txtAlergias.getText(), txtFechanacimiento.getText(), txtCorreo.getText(), txtEstadocivil.getText(), txtTelefono.getText(), txtDireccion.getText());
+			}
+		});
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(201, 334, 48, 46);
+		contentPane.add(btnActualizar);
 	}
 }

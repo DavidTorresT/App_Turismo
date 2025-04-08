@@ -38,6 +38,7 @@ public class frmPromotores extends JFrame {
 	private JLabel lblIdPromotor;
 	private JTextField txtIdpromotor;
 	private JButton btnConsultar;
+	private JButton btnActualizar;
 
 	/**
 	 * Launch the application.
@@ -173,10 +174,14 @@ public class frmPromotores extends JFrame {
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(120, 309, 42, 46);
+		btnGuardar.setBounds(69, 309, 42, 46);
 		contentPane.add(btnGuardar);
 		
 		btnDelete = new JButton("");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnDelete.setBorder(null);
 		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.addMouseListener(new MouseAdapter() {
@@ -194,7 +199,7 @@ public class frmPromotores extends JFrame {
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
-		btnDelete.setBounds(231, 46, 48, 46);
+		btnDelete.setBounds(238, 309, 48, 46);
 		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 		
@@ -219,8 +224,22 @@ public class frmPromotores extends JFrame {
 		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
 		btnConsultar.setContentAreaFilled(false);
 		btnConsultar.setBorder(null);
-		btnConsultar.setBounds(183, 309, 45, 46);
+		btnConsultar.setBounds(125, 309, 45, 46);
 		contentPane.add(btnConsultar);
+		
+		btnActualizar = new JButton("");
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.update(Integer.parseInt(txtIdpromotor.getText()), txtTipodocumento.getText(), Integer.parseInt(txtNumerodocumento.getText()), txtNombres.getText(), txtApellidos.getText(), txtDireccion.getText(), txtCorreo.getText(), txtFechanacimiento.getText(), txtTelefono.getText());
+			}
+		});
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(180, 309, 48, 46);
+		contentPane.add(btnActualizar);
 	}
 
 }

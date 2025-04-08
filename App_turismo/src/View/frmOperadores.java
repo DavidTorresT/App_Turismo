@@ -40,6 +40,7 @@ public class frmOperadores extends JFrame {
 	Operadores cr = new Operadores();
 	private JButton btnConsultar;
 	private JTextField txtMatricula;
+	private JButton btnActualizar;
 
 	/**
 	 * Launch the application.
@@ -166,10 +167,11 @@ public class frmOperadores extends JFrame {
 				txtDireccion.setText("");
 				txtCorreo.setText("");
 				txtTelefono.setText("");
+				txtMatricula.setText("");
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(107, 312, 51, 47);
+		btnGuardar.setBounds(71, 312, 51, 47);
 		contentPane.add(btnGuardar);
 		
 		lblNewLabel_3 = new JLabel("ID Operador:");
@@ -189,10 +191,18 @@ public class frmOperadores extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdoperador.getText()));
+				txtTipodocumento.setText("");
+				txtNumerodocumento.setText("");
+				txtNombres.setText("");
+				txtApellidos.setText("");
+				txtDireccion.setText("");
+				txtCorreo.setText("");
+				txtTelefono.setText("");
+				txtMatricula.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
-		btnDelete.setBounds(258, 53, 48, 46);
+		btnDelete.setBounds(245, 312, 48, 46);
 		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 		
@@ -207,13 +217,31 @@ public class frmOperadores extends JFrame {
 		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
 		btnConsultar.setContentAreaFilled(false);
 		btnConsultar.setBorder(null);
-		btnConsultar.setBounds(180, 313, 45, 46);
+		btnConsultar.setBounds(132, 313, 45, 46);
 		contentPane.add(btnConsultar);
 		
 		txtMatricula = new JTextField();
 		txtMatricula.setColumns(10);
 		txtMatricula.setBounds(197, 281, 86, 20);
 		contentPane.add(txtMatricula);
+		
+		btnActualizar = new JButton("");
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.update(Integer.parseInt(txtIdoperador.getText()), txtTipodocumento.getText(), Integer.parseInt(txtNumerodocumento.getText()), txtNombres.getText(), txtApellidos.getText(), txtDireccion.getText(), txtCorreo.getText(), txtTelefono.getText(), txtMatricula.getText());
+			}
+		});
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(187, 313, 48, 46);
+		contentPane.add(btnActualizar);
 		
 		
 	}

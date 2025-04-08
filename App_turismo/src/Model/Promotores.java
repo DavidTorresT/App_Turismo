@@ -240,4 +240,45 @@ public class Promotores {
 		
 	}
 	
+	//Actualizar
+	public void update(int idpromotor, String tipodocumento, int documento, String nombres, String apellidos, String direccion, String correo, String fechanacimiento, String telefono) {
+		Connection dbConnection = null;
+		PreparedStatement pst = null; //Preparar la trx
+		
+		String script = "UPDATE tblpromotores SET tipodocumento = ?, documento = ?, nombres = ?, apellidos = ?, direccion = ?, correopersonal = ?, fechanacimiento = ?, telefono = ? WHERE id = ?";
+		
+		try {
+			dbConnection = conector.conectarBD(); // Abrir la conexion
+			pst = dbConnection.prepareStatement(script); //Abrir el buffer
+			
+			//Parametrizar los campos
+			pst.setString(1, tipodocumento);
+			pst.setInt(2, documento);
+			pst.setString(3, nombres);
+			pst.setString(4, apellidos);
+			pst.setString(5, direccion);
+			pst.setString(6, correo);
+			pst.setString(7, fechanacimiento);
+			pst.setString(8, telefono);
+			pst.setInt(9, idpromotor);
+			
+			//Ejecutar la trx
+			pst.executeUpdate();
+			
+			int  rs = JOptionPane.showConfirmDialog(null, "Desea actuailzar el registro" + idpromotor + "?");
+			
+			if (rs == JOptionPane.OK_OPTION) {
+				// Ejecuta la tx
+				pst.executeUpdate();
+				JOptionPane.showConfirmDialog(null, "Registro actualizado con exito.");
+			} else {
+				JOptionPane.showConfirmDialog(null, "Operacion cancelada.");
+			}
+			
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+	
 }

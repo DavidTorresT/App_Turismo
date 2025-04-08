@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Cursor;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class frmTiposmedios extends JFrame {
 
@@ -69,6 +70,7 @@ public class frmTiposmedios extends JFrame {
 		contentPane.add(lblObservaciones);
 		
 		JLabel lblNewLabel_1 = new JLabel("Gestion De Tipos de Medios");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_1.setBounds(90, 11, 237, 26);
 		contentPane.add(lblNewLabel_1);
@@ -103,7 +105,7 @@ public class frmTiposmedios extends JFrame {
 				
 			}
 		});
-		btnGuardar.setBounds(154, 220, 48, 46);
+		btnGuardar.setBounds(111, 220, 48, 46);
 		contentPane.add(btnGuardar);
 		
 		JLabel lblIdTipoMedio = new JLabel("ID Tipo Medio:");
@@ -128,7 +130,7 @@ public class frmTiposmedios extends JFrame {
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
-		btnDelete.setBounds(240, 53, 48, 46);
+		btnDelete.setBounds(279, 220, 48, 46);
 		btnDelete.setContentAreaFilled(false);
 		contentPane.add(btnDelete);
 		
@@ -143,7 +145,21 @@ public class frmTiposmedios extends JFrame {
 				cr.readOne(Integer.parseInt(txtIdtipomedio.getText()), txtNombre, txtObservaciones);
 			}
 		});
-		btnConsultar.setBounds(222, 220, 42, 46);
+		btnConsultar.setBounds(169, 220, 42, 46);
 		contentPane.add(btnConsultar);
+		
+		JButton btnActualizar = new JButton("");
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.update(Integer.parseInt(txtIdtipomedio.getText()), txtNombre.getText(), txtObservaciones.getText());
+			}
+		});
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(221, 220, 48, 46);
+		contentPane.add(btnActualizar);
 	}
 }

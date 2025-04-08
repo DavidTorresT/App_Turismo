@@ -25,7 +25,7 @@ public class frmMedios extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNombre;
-	private JTextField txtObservacion;
+	private JTextField txtObservaciones;
 	private JTextField txtIdtipomedio;
 	private JButton btnGuardar;
 	Medios cr = new Medios();
@@ -33,6 +33,7 @@ public class frmMedios extends JFrame {
 	private JTextField txtIdmedios;
 	private JButton btnDelete;
 	private JButton btnConsultar;
+	private JButton btnActualizar;
 
 	/**
 	 * Launch the application.
@@ -88,10 +89,10 @@ public class frmMedios extends JFrame {
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 		
-		txtObservacion = new JTextField();
-		txtObservacion.setBounds(216, 167, 86, 20);
-		contentPane.add(txtObservacion);
-		txtObservacion.setColumns(10);
+		txtObservaciones = new JTextField();
+		txtObservaciones.setBounds(216, 167, 86, 20);
+		contentPane.add(txtObservaciones);
+		txtObservaciones.setColumns(10);
 		
 		txtIdtipomedio = new JTextField();
 		txtIdtipomedio.setBounds(217, 211, 86, 20);
@@ -105,14 +106,14 @@ public class frmMedios extends JFrame {
 		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cr.create(txtNombre.getText(), txtObservacion.getText(), Integer.parseInt(txtIdtipomedio.getText()));
+				cr.create(txtNombre.getText(), txtObservaciones.getText(), Integer.parseInt(txtIdtipomedio.getText()));
 				txtNombre.setText("");
-				txtObservacion.setText("");
+				txtObservaciones.setText("");
 				txtIdtipomedio.setText("");
 			}
 		});
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnGuardar.setBounds(174, 258, 46, 43);
+		btnGuardar.setBounds(91, 258, 46, 43);
 		contentPane.add(btnGuardar);
 		
 		lblNewLabel_1 = new JLabel("ID Medio:");
@@ -133,28 +134,42 @@ public class frmMedios extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				cr.delete(Integer.parseInt(txtIdmedios.getText()));
 				txtNombre.setText("");
-				txtObservacion.setText("");
+				txtObservaciones.setText("");
 				txtIdtipomedio.setText("");
 			}
 		});
 		btnDelete.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8664938_trash_can_delete_remove_icon.png"));
 		btnDelete.setContentAreaFilled(false);
-		btnDelete.setBounds(270, 56, 48, 46);
+		btnDelete.setBounds(260, 258, 48, 46);
 		contentPane.add(btnDelete);
 		
 		btnConsultar = new JButton("");
 		btnConsultar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				cr.readOne(Integer.parseInt(txtIdmedios.getText()), txtNombre, txtObservacion, txtIdtipomedio);
+				cr.readOne(Integer.parseInt(txtIdmedios.getText()), txtNombre, txtObservaciones, txtIdtipomedio);
 			}
 		});
 		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnConsultar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\3844467_magnifier_search_zoom_icon.png"));
 		btnConsultar.setContentAreaFilled(false);
 		btnConsultar.setBorder(null);
-		btnConsultar.setBounds(241, 255, 45, 46);
+		btnConsultar.setBounds(147, 255, 45, 46);
 		contentPane.add(btnConsultar);
+		
+		btnActualizar = new JButton("");
+		btnActualizar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				cr.update(Integer.parseInt(txtIdmedios.getText()), txtNombre.getText(), txtObservaciones.getText());
+			}
+		});
+		btnActualizar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnActualizar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035962_sync_sharp_icon.png"));
+		btnActualizar.setContentAreaFilled(false);
+		btnActualizar.setBorder(null);
+		btnActualizar.setBounds(202, 255, 48, 46);
+		contentPane.add(btnActualizar);
 	}
 
 }

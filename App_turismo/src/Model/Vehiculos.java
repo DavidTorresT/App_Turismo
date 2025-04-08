@@ -94,7 +94,7 @@ public class Vehiculos {
 
 	Conexion conector = new Conexion();
 
-	//Crear
+	// Crear
 	public void create(String matricula, String marca, int puestos, String modelo, int numeromotor, String categoria,
 			int idtipo) {
 		Connection dbConnection = null;
@@ -124,7 +124,7 @@ public class Vehiculos {
 
 	}
 
-	//Borrar
+	// Borrar
 	public void delete(String matricula) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; // Preparar la trx
@@ -153,10 +153,11 @@ public class Vehiculos {
 	}
 
 	// Consultar
-	public void readOne(String matricula, JTextField marca, JTextField puestos, JTextField modelo, JTextField numeromotor, JTextField categoria, JTextField idtipo) {
+	public void readOne(String matricula, JTextField marca, JTextField puestos, JTextField modelo,
+			JTextField numeromotor, JTextField categoria, JTextField idtipo) {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; // Preparar la trx
-		
+
 		String script = "SELECT * FROM tblvehiculo  WHERE matricula = ?";
 
 		try {
@@ -173,6 +174,45 @@ public class Vehiculos {
 				numeromotor.setText(rs.getString(5));
 				categoria.setText(rs.getString(6));
 				idtipo.setText(rs.getString(7));
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+
+	// Actualizar
+	public void update(String matricula, String marca, int puestos, String modelo, int numeromotor, String categoria, int idtipo) {
+		Connection dbConnection = null;
+		PreparedStatement pst = null; // Preparar la trx
+
+		String script = "UPDATE tblvehiculo SET marca = ?, puestos = ?, modelo = ?, numeromotor = ?, categoria = ?, idtipo = ? WHERE idtipo = ?";
+
+		try {
+			dbConnection = conector.conectarBD(); // Abrir la conexion
+			pst = dbConnection.prepareStatement(script); // Abrir el buffer
+
+			// Parametrizar los campos
+			pst.setString(1, marca);
+			pst.setInt(2, puestos);
+			pst.setString(3, modelo);
+			pst.setInt(4, numeromotor);
+			pst.setString(5, categoria);
+			pst.setInt(6, idtipo);
+			pst.setString(7, matricula);
+
+			// Ejecutar la trx
+			pst.executeUpdate();
+
+			int rs = JOptionPane.showConfirmDialog(null, "Desea actuailzar el registro" + matricula + "?");
+
+			if (rs == JOptionPane.OK_OPTION) {
+				// Ejecuta la tx
+				pst.executeUpdate();
+				JOptionPane.showConfirmDialog(null, "Registro actualizado con exito.");
+			} else {
+				JOptionPane.showConfirmDialog(null, "Operacion cancelada.");
 			}
 
 		} catch (SQLException e) {
