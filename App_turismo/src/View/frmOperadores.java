@@ -148,10 +148,11 @@ public class frmOperadores extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("Gestion De Operadores Turisticos");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(35, 11, 279, 31);
+		lblNewLabel_1.setBounds(42, 24, 279, 31);
 		contentPane.add(lblNewLabel_1);
 		
 		btnGuardar = new JButton("");
+		btnGuardar.setToolTipText("Guardar");
 		btnGuardar.setBorder(null);
 		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
@@ -185,6 +186,7 @@ public class frmOperadores extends JFrame {
 		contentPane.add(txtIdoperador);
 		
 		btnDelete = new JButton("");
+		btnDelete.setToolTipText("Eliminar");
 		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.setBorder(null);
 		btnDelete.addMouseListener(new MouseAdapter() {
@@ -207,6 +209,7 @@ public class frmOperadores extends JFrame {
 		contentPane.add(btnDelete);
 		
 		btnConsultar = new JButton("");
+		btnConsultar.setToolTipText("Consultar");
 		btnConsultar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -226,6 +229,7 @@ public class frmOperadores extends JFrame {
 		contentPane.add(txtMatricula);
 		
 		btnActualizar = new JButton("");
+		btnActualizar.setToolTipText("Actualizar");
 		btnActualizar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -242,6 +246,22 @@ public class frmOperadores extends JFrame {
 		btnActualizar.setBorder(null);
 		btnActualizar.setBounds(187, 313, 48, 46);
 		contentPane.add(btnActualizar);
+		
+		JButton btnMenu = new JButton("");
+		btnMenu.setToolTipText("Menu");
+		btnMenu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmPrincipal view = new frmPrincipal();
+				view.show();
+			}
+		});
+		btnMenu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnMenu.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035789_chevron_back_sharp_icon.png"));
+		btnMenu.setContentAreaFilled(false);
+		btnMenu.setBorder(null);
+		btnMenu.setBounds(10, 11, 21, 21);
+		contentPane.add(btnMenu);
 		
 		
 	}

@@ -132,6 +132,7 @@ public class frmVehiculo extends JFrame {
 		txtIdtipo.setColumns(10);
 		
 		JButton btnGuardar = new JButton("");
+		btnGuardar.setToolTipText("Guardar");
 		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnGuardar.setBorder(null);
 		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
@@ -153,6 +154,7 @@ public class frmVehiculo extends JFrame {
 		contentPane.add(btnGuardar);
 		
 		JButton btnDelete = new JButton("");
+		btnDelete.setToolTipText("Eliminar");
 		btnDelete.setBorder(null);
 		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.addMouseListener(new MouseAdapter() {
@@ -174,6 +176,7 @@ public class frmVehiculo extends JFrame {
 		contentPane.add(btnDelete);
 		
 		JButton btnConsultar = new JButton("");
+		btnConsultar.setToolTipText("Consultar");
 		btnConsultar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -188,6 +191,7 @@ public class frmVehiculo extends JFrame {
 		contentPane.add(btnConsultar);
 		
 		JButton btnActualizar = new JButton("");
+		btnActualizar.setToolTipText("Actualizar");
 		btnActualizar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -200,5 +204,21 @@ public class frmVehiculo extends JFrame {
 		btnActualizar.setBorder(null);
 		btnActualizar.setBounds(177, 292, 48, 46);
 		contentPane.add(btnActualizar);
+		
+		JButton btnMenu = new JButton("");
+		btnMenu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmPrincipal view = new frmPrincipal();
+				view.show();
+			}
+		});
+		btnMenu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnMenu.setToolTipText("Menu");
+		btnMenu.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035789_chevron_back_sharp_icon.png"));
+		btnMenu.setContentAreaFilled(false);
+		btnMenu.setBorder(null);
+		btnMenu.setBounds(10, 11, 21, 21);
+		contentPane.add(btnMenu);
 	}
 }

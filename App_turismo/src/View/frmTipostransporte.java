@@ -33,6 +33,7 @@ public class frmTipostransporte extends JFrame {
 	Tipostransporte cr = new Tipostransporte();
 	private JButton btnConsultar;
 	private JButton btnActualizar;
+	private JButton btnMenu;
 
 	/**
 	 * Launch the application.
@@ -54,9 +55,10 @@ public class frmTipostransporte extends JFrame {
 	 * Create the frame.
 	 */
 	public frmTipostransporte() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 340);
 		contentPane = new JPanel();
+		contentPane.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -90,17 +92,19 @@ public class frmTipostransporte extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		btnGuardar = new JButton("");
-		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnGuardar.setBorder(null);
-		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
-		btnGuardar.setContentAreaFilled(false);
-		btnGuardar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnGuardar.setToolTipText("Guardar");
+		btnGuardar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				cr.create(txtNombre.getText(), txtObservacion.getText());
 				txtNombre.setText("");
 				txtObservacion.setText("");
 			}
 		});
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGuardar.setBorder(null);
+		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnGuardar.setBounds(113, 244, 48, 46);
 		contentPane.add(btnGuardar);
@@ -116,6 +120,7 @@ public class frmTipostransporte extends JFrame {
 		contentPane.add(txtIdtipo);
 		
 		btnDelete = new JButton("");
+		btnDelete.setToolTipText("Eliminar");
 		btnDelete.setBorder(null);
 		btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnDelete.addMouseListener(new MouseAdapter() {
@@ -132,6 +137,7 @@ public class frmTipostransporte extends JFrame {
 		contentPane.add(btnDelete);
 		
 		btnConsultar = new JButton("");
+		btnConsultar.setToolTipText("Consultar");
 		btnConsultar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -146,6 +152,7 @@ public class frmTipostransporte extends JFrame {
 		contentPane.add(btnConsultar);
 		
 		btnActualizar = new JButton("");
+		btnActualizar.setToolTipText("Actualizar");
 		btnActualizar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -158,6 +165,23 @@ public class frmTipostransporte extends JFrame {
 		btnActualizar.setBorder(null);
 		btnActualizar.setBounds(220, 244, 48, 46);
 		contentPane.add(btnActualizar);
+		
+		btnMenu = new JButton("");
+		btnMenu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmPrincipal view = new frmPrincipal();
+				view.show();
+			}
+			
+		});
+		btnMenu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnMenu.setToolTipText("Menu");
+		btnMenu.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035789_chevron_back_sharp_icon.png"));
+		btnMenu.setContentAreaFilled(false);
+		btnMenu.setBorder(null);
+		btnMenu.setBounds(10, 11, 21, 21);
+		contentPane.add(btnMenu);
 	}
 
 }

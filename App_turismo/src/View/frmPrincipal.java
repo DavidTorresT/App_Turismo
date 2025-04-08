@@ -44,7 +44,7 @@ public class frmPrincipal extends JFrame {
 	 */
 	public frmPrincipal() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 434, 444);
+		setBounds(100, 100, 453, 444);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(133, 188, 136));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -72,14 +72,15 @@ public class frmPrincipal extends JFrame {
 		});
 		btnPromotores.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnPromotores.setBorder(null);
-		btnPromotores.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035899_person_sharp_icon.png"));
+		btnPromotores.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\promotor.png"));
 		btnPromotores.setContentAreaFilled(false);
-		btnPromotores.setBounds(18, 198, 75, 60);
+		btnPromotores.setBounds(38, 183, 65, 60);
 		contentPane.add(btnPromotores);
 		
 		JLabel lblNewLabel_1 = new JLabel("Promotores");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(18, 182, 75, 14);
+		lblNewLabel_1.setBounds(28, 158, 75, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnVehiculos = new JButton("");
@@ -91,15 +92,16 @@ public class frmPrincipal extends JFrame {
 				view.show();
 			}
 		});
-		btnVehiculos.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035717_bus_sharp_icon.png"));
+		btnVehiculos.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\autobus.png"));
 		btnVehiculos.setContentAreaFilled(false);
 		btnVehiculos.setBorder(null);
-		btnVehiculos.setBounds(223, 305, 65, 49);
+		btnVehiculos.setBounds(235, 287, 65, 58);
 		contentPane.add(btnVehiculos);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Vehiculos");
+		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setBounds(223, 289, 65, 14);
+		lblNewLabel_1_1.setBounds(235, 262, 65, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JButton btnCompania = new JButton("");
@@ -111,15 +113,16 @@ public class frmPrincipal extends JFrame {
 				view.show();
 			}
 		});
-		btnCompania.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035671_business_sharp_icon.png"));
+		btnCompania.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\compania.png"));
 		btnCompania.setContentAreaFilled(false);
 		btnCompania.setBorder(null);
-		btnCompania.setBounds(18, 113, 60, 49);
+		btnCompania.setBounds(33, 88, 60, 49);
 		contentPane.add(btnCompania);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Compañias");
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1.setBounds(20, 88, 65, 14);
+		lblNewLabel_1_1_1.setBounds(28, 63, 65, 14);
 		contentPane.add(lblNewLabel_1_1_1);
 		
 		JButton btnCliente = new JButton("");
@@ -131,15 +134,16 @@ public class frmPrincipal extends JFrame {
 				view.show();
 			}
 		});
-		btnCliente.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035899_person_sharp_icon.png"));
+		btnCliente.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\opinion-del-cliente.png"));
 		btnCliente.setContentAreaFilled(false);
 		btnCliente.setBorder(null);
-		btnCliente.setBounds(292, 111, 65, 60);
+		btnCliente.setBounds(343, 88, 65, 58);
 		contentPane.add(btnCliente);
 		
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Clientes");
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1_1.setBounds(292, 88, 65, 14);
+		lblNewLabel_1_1_1_1.setBounds(343, 63, 65, 14);
 		contentPane.add(lblNewLabel_1_1_1_1);
 		
 		JButton btnAgencia = new JButton("");
@@ -151,15 +155,16 @@ public class frmPrincipal extends JFrame {
 			}
 		});
 		btnAgencia.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnAgencia.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035776_airplane_sharp_icon.png"));
+		btnAgencia.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\agencia-de-viajes.png"));
 		btnAgencia.setContentAreaFilled(false);
 		btnAgencia.setBorder(null);
-		btnAgencia.setBounds(98, 113, 65, 49);
+		btnAgencia.setBounds(117, 88, 65, 49);
 		contentPane.add(btnAgencia);
 		
 		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Agencias");
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1_1_1.setBounds(98, 88, 65, 14);
+		lblNewLabel_1_1_1_1_1.setBounds(117, 64, 65, 14);
 		contentPane.add(lblNewLabel_1_1_1_1_1);
 		
 		JButton btnPaquetes = new JButton("");
@@ -171,15 +176,16 @@ public class frmPrincipal extends JFrame {
 				view.show();
 			}
 		});
-		btnPaquetes.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9036020_newspaper_sharp_icon.png"));
+		btnPaquetes.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\viajar.png"));
 		btnPaquetes.setContentAreaFilled(false);
 		btnPaquetes.setBorder(null);
-		btnPaquetes.setBounds(183, 113, 65, 49);
+		btnPaquetes.setBounds(223, 88, 77, 58);
 		contentPane.add(btnPaquetes);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Paquetes Turisticos");
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_2.setBounds(173, 88, 93, 14);
+		lblNewLabel_1_2.setBounds(204, 64, 125, 14);
 		contentPane.add(lblNewLabel_1_2);
 		
 		JButton btnTiposmedios = new JButton("");
@@ -191,15 +197,16 @@ public class frmPrincipal extends JFrame {
 				view.show();
 			}
 		});
-		btnTiposmedios.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035730_globe_sharp_icon.png"));
+		btnTiposmedios.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\medios-de-comunicacion-en-masa.png"));
 		btnTiposmedios.setContentAreaFilled(false);
 		btnTiposmedios.setBorder(null);
-		btnTiposmedios.setBounds(183, 209, 65, 49);
+		btnTiposmedios.setBounds(221, 178, 67, 65);
 		contentPane.add(btnTiposmedios);
 		
 		JLabel lblNewLabel_1_1_2 = new JLabel("Medios ");
+		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_2.setBounds(103, 182, 65, 14);
+		lblNewLabel_1_1_2.setBounds(117, 158, 65, 14);
 		contentPane.add(lblNewLabel_1_1_2);
 		
 		JButton btnMedios = new JButton("");
@@ -211,10 +218,10 @@ public class frmPrincipal extends JFrame {
 			}
 		});
 		btnMedios.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnMedios.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035894_phone_portrait_sharp_icon.png"));
+		btnMedios.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\marketing-de-medios-sociales.png"));
 		btnMedios.setContentAreaFilled(false);
 		btnMedios.setBorder(null);
-		btnMedios.setBounds(103, 207, 65, 49);
+		btnMedios.setBounds(117, 178, 65, 60);
 		contentPane.add(btnMedios);
 		
 		JButton btnTipostransporte = new JButton("");
@@ -226,20 +233,22 @@ public class frmPrincipal extends JFrame {
 			}
 		});
 		btnTipostransporte.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnTipostransporte.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035723_car_sport_sharp_icon.png"));
+		btnTipostransporte.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\transporte.png"));
 		btnTipostransporte.setContentAreaFilled(false);
 		btnTipostransporte.setBorder(null);
-		btnTipostransporte.setBounds(117, 305, 65, 49);
+		btnTipostransporte.setBounds(98, 287, 84, 58);
 		contentPane.add(btnTipostransporte);
 		
 		JLabel lblNewLabel_1_1_2_1 = new JLabel("Tipos De Medios");
+		lblNewLabel_1_1_2_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_2_1.setBounds(183, 182, 77, 14);
+		lblNewLabel_1_1_2_1.setBounds(204, 158, 108, 14);
 		contentPane.add(lblNewLabel_1_1_2_1);
 		
 		JLabel lblNewLabel_1_1_2_1_1 = new JLabel("Tipos De Transporte");
+		lblNewLabel_1_1_2_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_2_1_1.setBounds(98, 289, 110, 14);
+		lblNewLabel_1_1_2_1_1.setBounds(77, 262, 125, 14);
 		contentPane.add(lblNewLabel_1_1_2_1_1);
 		
 		JButton btnOperadores = new JButton("");
@@ -251,15 +260,16 @@ public class frmPrincipal extends JFrame {
 			}
 		});
 		btnOperadores.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnOperadores.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035899_person_sharp_icon.png"));
+		btnOperadores.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\group_921347.png"));
 		btnOperadores.setContentAreaFilled(false);
 		btnOperadores.setBorder(null);
-		btnOperadores.setBounds(292, 198, 60, 60);
+		btnOperadores.setBounds(348, 183, 60, 60);
 		contentPane.add(btnOperadores);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Operadores");
+		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_3.setBounds(282, 182, 75, 14);
+		lblNewLabel_1_3.setBounds(333, 158, 75, 14);
 		contentPane.add(lblNewLabel_1_3);
 	}
 }

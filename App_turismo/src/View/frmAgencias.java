@@ -129,6 +129,7 @@ public class frmAgencias extends JFrame {
 		txtIdcompania.setColumns(10);
 		
 		JButton btnGuardar = new JButton("");
+		btnGuardar.setToolTipText("Guardar");
 		btnGuardar.setBorder(null);
 		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
 		btnGuardar.setContentAreaFilled(false);
@@ -159,6 +160,7 @@ public class frmAgencias extends JFrame {
 		contentPane.add(txtIdagencia);
 		
 		JButton btnDelete = new JButton("");
+		btnDelete.setToolTipText("Eliminar");
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -183,6 +185,7 @@ public class frmAgencias extends JFrame {
 		btnDelete.setContentAreaFilled(false);
 		
 		JButton btnConsultar = new JButton("");
+		btnConsultar.setToolTipText("Consultar");
 		btnConsultar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnConsultar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -196,6 +199,7 @@ public class frmAgencias extends JFrame {
 		contentPane.add(btnConsultar);
 		
 		JButton btnActualizar = new JButton("");
+		btnActualizar.setToolTipText("Actualizar");
 		btnActualizar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -208,5 +212,21 @@ public class frmAgencias extends JFrame {
 		btnActualizar.setBorder(null);
 		btnActualizar.setBounds(206, 290, 48, 46);
 		contentPane.add(btnActualizar);
+		
+		JButton btnMenu = new JButton("");
+		btnMenu.setToolTipText("Menu");
+		btnMenu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmPrincipal view = new frmPrincipal();
+				view.show();
+			}
+		});
+		btnMenu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnMenu.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035789_chevron_back_sharp_icon.png"));
+		btnMenu.setContentAreaFilled(false);
+		btnMenu.setBorder(null);
+		btnMenu.setBounds(10, 11, 21, 21);
+		contentPane.add(btnMenu);
 	}
 }

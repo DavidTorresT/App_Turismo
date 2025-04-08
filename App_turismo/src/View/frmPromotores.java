@@ -39,6 +39,7 @@ public class frmPromotores extends JFrame {
 	private JTextField txtIdpromotor;
 	private JButton btnConsultar;
 	private JButton btnActualizar;
+	private JButton btnMenu;
 
 	/**
 	 * Launch the application.
@@ -155,12 +156,10 @@ public class frmPromotores extends JFrame {
 		txtTelefono.setColumns(10);
 		
 		btnGuardar = new JButton("");
-		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		btnGuardar.setBorder(null);
-		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
-		btnGuardar.setContentAreaFilled(false);
-		btnGuardar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnGuardar.setToolTipText("Guardar");
+		btnGuardar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				cr.create(Integer.parseInt(txtTipodocumento.getText()), Integer.parseInt(txtNumerodocumento.getText()), txtNombres.getText(), txtApellidos.getText(), txtDireccion.getText(), txtCorreo.getText(), txtFechanacimiento.getText(), txtTelefono.getText());
 				txtTipodocumento.setText("");
 				txtNumerodocumento.setText("");
@@ -170,14 +169,18 @@ public class frmPromotores extends JFrame {
 				txtCorreo.setText("");
 				txtFechanacimiento.setText("");
 				txtTelefono.setText("");
-				
 			}
 		});
+		btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGuardar.setBorder(null);
+		btnGuardar.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\8666542_save_icon.png"));
+		btnGuardar.setContentAreaFilled(false);
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnGuardar.setBounds(69, 309, 42, 46);
 		contentPane.add(btnGuardar);
 		
 		btnDelete = new JButton("");
+		btnDelete.setToolTipText("Eliminar");
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -214,6 +217,7 @@ public class frmPromotores extends JFrame {
 		contentPane.add(txtIdpromotor);
 		
 		btnConsultar = new JButton("");
+		btnConsultar.setToolTipText("Consultar");
 		btnConsultar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -228,6 +232,7 @@ public class frmPromotores extends JFrame {
 		contentPane.add(btnConsultar);
 		
 		btnActualizar = new JButton("");
+		btnActualizar.setToolTipText("Actualizar");
 		btnActualizar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -240,6 +245,22 @@ public class frmPromotores extends JFrame {
 		btnActualizar.setBorder(null);
 		btnActualizar.setBounds(180, 309, 48, 46);
 		contentPane.add(btnActualizar);
+		
+		btnMenu = new JButton("");
+		btnMenu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frmPrincipal view = new frmPrincipal();
+				view.show();
+			}
+		});
+		btnMenu.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnMenu.setToolTipText("Menu");
+		btnMenu.setIcon(new ImageIcon("C:\\Users\\APRENDIZ\\Documents\\Icon\\9035789_chevron_back_sharp_icon.png"));
+		btnMenu.setContentAreaFilled(false);
+		btnMenu.setBorder(null);
+		btnMenu.setBounds(10, 11, 21, 21);
+		contentPane.add(btnMenu);
 	}
 
 }

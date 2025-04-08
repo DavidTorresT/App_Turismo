@@ -266,7 +266,7 @@ public class Paquetes {
 		Connection dbConnection = null;
 		PreparedStatement pst = null; // Preparar la trx
 
-		String script = "UPDATE tblpaquetes SET iddestino = ?, idorigen = ?, fechaventa = ?, horaventa = ?, horasalida = ?, fechaejecucion = ?, observacion = ?, idpromotor = ?, idmedio = ?, idcliente = ?, idagencia = ?, matricula = ?, precio = ? WHERE codigo = ?";
+		String script = "UPDATE tblpaquetes SET iddestino = ?, idorigen = ?, fechaventa = ?, horaventa = ?, horasalida = ?, fechaejecucion = ?, observacion = ?, idpromotor = ?, idmedios = ?, idcliente = ?, idagencia = ?, matricula = ?, precios = ? WHERE codigo = ?";
 
 		try {
 			dbConnection = conector.conectarBD(); // Abrir la conexion
